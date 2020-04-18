@@ -197,24 +197,7 @@ bindsym $mod+Shift+f exec firefox --private
 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -b --config ~/.picom.conf
-# Start i3bar to display a workspace bar (plus the system information) 
-# finds out, if available)
-bar {
-    status_command    i3status -c ~/.config/i3status/config
-    position          top
-    workspace_buttons yes
-    colors {
-        background #282A36
-        statusline #F8F8F2
-        separator  #44475A
-        
-        focused_workspace  #44475A #44475A #F8F8F2
-        active_workspace   #282A36 #44475A #F8F8F2
-        inactive_workspace #282A36 #282A36 #BFBFBF
-        urgent_workspace   #FF5555 #FF5555 #F8F8F2
-        binding_mode       #FF5555 #FF5555 #F8F8F2
-    }
-}
+exec --no-startup-id ~/.config/polybar/launch.sh
 
 for_window [class=".*"] border pixel 0
 # Define windows gaps
