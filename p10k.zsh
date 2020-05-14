@@ -36,7 +36,7 @@
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-      os_icon                 # os identifier
+      # os_icon                 # os identifier
       dir                     # current directory
       vcs                     # git status
       # prompt_char           # prompt symbol
@@ -50,7 +50,7 @@
       status                  # exit code of the last command
       command_execution_time  # duration of the last command
       background_jobs         # presence of background jobs
-      direnv                  # direnv status (https://direnv.net/)
+      #direnv                  # direnv status (https://direnv.net/)
       #virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       #anaconda                # conda environment (https://conda.io/)
       #pyenv                   # python environment (https://github.com/pyenv/pyenv)
@@ -71,12 +71,12 @@
       # aws_eb_env            # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
       # azure                 # azure account name (https://docs.microsoft.com/en-us/cli/azure)
       # gcloud                # google cloud acccount and project (https://cloud.google.com/)
-      context                 # user@hostname
+      #context                 # user@hostname
       #nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
       #ranger                  # ranger shell (https://github.com/ranger/ranger)
-      vim_shell               # vim shell indicator (:sh)
+      #vim_shell               # vim shell indicator (:sh)
       # midnight_commander    # midnight commander shell (https://midnight-commander.org/)
-      vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
+      # vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
       # vpn_ip                # virtual private network indicator
       # ram                   # free RAM
       # load                  # CPU load
@@ -132,7 +132,7 @@
   # POWERLEVEL9K_MODE=compatible, or install the recommended Powerlevel10k font from
   # https://github.com/romkatv/powerlevel10k/#recommended-meslo-nerd-font-patched-for-powerlevel10k
   # and set POWERLEVEL9K_MODE=nerdfont-complete.
-  typeset -g POWERLEVEL9K_MODE=nerdfont-complete
+  typeset -g POWERLEVEL9K_MODE=awesome-fontconfig
 
   # When set to true, icons appear before content on both sides of the prompt. When set
   # to false, icons go after content. If empty or not set, icons go before content in the left
@@ -198,7 +198,7 @@
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
 
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=10
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=50
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=235
   # Make the icon bold.
   typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='${P9K_CONTENT}'
