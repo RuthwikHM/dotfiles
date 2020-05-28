@@ -47,9 +47,9 @@
   # automatically hidden when the input line reaches it. Right prompt above the
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-      status                  # exit code of the last command
-      command_execution_time  # duration of the last command
-      background_jobs         # presence of background jobs
+      # status                  # exit code of the last command
+      # command_execution_time  # duration of the last command
+      # background_jobs         # presence of background jobs
       #direnv                  # direnv status (https://direnv.net/)
       #virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
       #anaconda                # conda environment (https://conda.io/)
@@ -80,7 +80,7 @@
       # vpn_ip                # virtual private network indicator
       # ram                   # free RAM
       # load                  # CPU load
-      time                    # current time
+      # time                    # current time
       # public_ip             # public IP address
       # proxy                 # system-wide http/https/ftp proxy
       # battery               # internal battery
@@ -228,16 +228,16 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=026
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND=8
   # Default current directory foreground color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=234
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=117
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=250
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=117
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=255
@@ -330,11 +330,11 @@
 
   #####################################[ vcs: git status ]######################################
   # Version control system colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=027
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=027
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=027
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=027
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=027
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=012
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=012
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=012
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=012
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=012
 
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
@@ -941,7 +941,7 @@ POWERLEVEL9K_STATUS_ERROR_FOREGROUND=196
 
   ####################################[ time: current time ]####################################
   # Current time color.
-  typeset -g POWERLEVEL9K_TIME_FOREGROUND=000
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND=232
   typeset -g POWERLEVEL9K_TIME_BACKGROUND=033
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
@@ -952,7 +952,7 @@ POWERLEVEL9K_STATUS_ERROR_FOREGROUND=196
   # Custom icon.
   # typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
-  typeset -g POWERLEVEL9K_TIME_PREFIX='at '
+  typeset -g POWERLEVEL9K_TIME_PREFIX=''
 
   # Example of a user-defined prompt segment. Function prompt_example will be called on every
   # prompt if `example` prompt segment is added to POWERLEVEL9K_LEFT_PROMPT_ELEMENTS or
