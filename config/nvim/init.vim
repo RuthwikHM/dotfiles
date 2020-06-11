@@ -5,7 +5,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
@@ -88,3 +87,9 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-f> :Files<CR>
 " Quit vim if nerd tree is the only tab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Fix j,k keys when lines are wrapped
+nnoremap j gj
+nnoremap k gk
+
+set clipboard+=unnamedplus
