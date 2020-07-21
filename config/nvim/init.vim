@@ -1,28 +1,35 @@
 call plug#begin('~/.config/nvim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
-Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-colorscheme nord
+colorscheme gruvbox
+set termguicolors
 
-""""Airline
-let g:airline_theme = 'nord'
+"""Airline
+let g:airline_theme = 'gruvbox'
+let g:gruvbox_contrast_dark = 'hard'
+
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#coc#enabled = 1
 " Use with urxvt because unicode support is bad.
 " if !exists('g:airline_symbols')
 "     let g:airline_symbols = {}
 " endif
-"
-" " unicode symbols
+
+" unicode symbols
 " let g:airline_left_sep = '»'
 " let g:airline_left_sep = '▶'
 " let g:airline_right_sep = '«'
@@ -35,8 +42,8 @@ let g:airline_powerline_fonts = 1
 " let g:airline_symbols.paste = 'Þ'
 " let g:airline_symbols.paste = '∥'
 " let g:airline_symbols.whitespace = 'Ξ'
-"
-" " airline symbols
+
+" airline symbols
 " let g:airline_left_sep = ''
 " let g:airline_left_alt_sep = ''
 " let g:airline_right_sep = ''
@@ -63,7 +70,7 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
+" Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
 filetype plugin on
@@ -77,8 +84,10 @@ set cindent
 set ignorecase   " case-insensitive search
 set smartcase
 " but case-sensitive if expression contains a capital letter
+
 """ Buffers
 set hidden       " Handle multiple buffers better
+
 " You can abandon a buffer with unsaved changes without a warning
 """Editor
 set scrolloff=3  " show 3 lines of context around cursor
@@ -88,14 +97,58 @@ set list         " show invisible characters
 set expandtab    " use spaces instead of tabs
 set tabstop=4    " global tab width
 set shiftwidth=4 " spaces to use when indenting
+
 " Turn on syntax highlighting
 syntax on
+
 " Enable line numbers
-set number
+set number relativenumber
+
+" Custom hooks
+
+" Automatically deletes all trailing whitespace and newlines at end of file on save.
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritepre * %s/\n\+\%$//e
+
+" Run xrdb whenever Xdefaults or Xresources are updated.
+autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+
+" Run xrdb whenever Xdefaults or Xresources are updated.
+autocmd BufWritePost init.vim source %
+
 " Custom shortcuts
+
+" Fugitive keybindings
+noremap <leader>gs :Git<CR>
+" remote branch on right
+noremap <leader>gj :diffget RE<CR>
+" local branch on left
+noremap <leader>gf :diffget LO<CR>
+
+" Replace all is aliased to R.
+" nnoremap R :%s///g<Left><Left>
+
+" Remap leader to space
+" let mapleader=" "
+
 " NerdTree Toggle
 map <C-n> :NERDTreeToggle<CR>
+
+" Fzf toggle
 map <C-f> :Files<CR>
+
+" Easy switching between panes
+map <A-h> <C-w>h
+map <A-j> <C-w>j
+map <A-k> <C-w>k
+map <A-l> <C-w>l
+
+" Easy closing of panes
+nnoremap <A-q> <C-w>q
+
+" Vertically center document when entering insert mode
+autocmd InsertEnter * norm zz
+
 " Quit vim if nerd tree is the only tab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -110,7 +163,7 @@ nnoremap k gk
 nmap <C-t> :TagbarToggle<CR>
 
 " Split below current window
-set splitbelow
+set splitbelow splitright
 
 " Coc example config
 
@@ -241,7 +294,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.

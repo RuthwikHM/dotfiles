@@ -6,7 +6,7 @@
 #cell_width_scale = 1.0
 clickable_url = true
 #dynamic_title = true
-font = Inconsolata-g for Powerline 10
+font = Fira Mono for Powerline 11.5
 ; fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -40,9 +40,7 @@ cursor_shape = block
 # "off", "left" or "right"
 #scrollbar = off
 
-
 [colors]
-# Nord colors
 cursor = #d8dee9
 cursor_foreground = #2e3440
 
@@ -68,41 +66,42 @@ color12 = #81a1c1
 color13 = #b48ead
 color14 = #8fbcbb
 color15 = #eceff4
+
 #Dracula colors
 # special
 # foreground      = #f8f8f2
 # foreground_bold = #f8f8f2
 # cursor          = #f8f8f2
 # background      = rgba(40, 42, 54,1)
-# 
+#
 # # black
 # color0  = #000000
 # color8  = #4d4d4d
-# 
+#
 # # red
 # color1  = #ff5555
 # color9  = #ff6e67
-# 
+#
 # # green
 # color2  = #50fa7b
 # color10 = #5af78e
-# 
+#
 # # yellow
 # color3  = #f1fa8c
 # color11 = #f4f99d
-# 
+#
 # # blue
 # color4  = #bd93f9
 # color12 = #caa9fa
-# 
+#
 # # magenta
 # color5  = #ff79c6
 # color13 = #ff92d0
-# 
+#
 # # cyan
 # color6  = #8be9fd
 # color14 = #9aedfe
-# 
+#
 # # white
 # color7  = #bfbfbf
 # color15 = #e6e6e6
@@ -118,4 +117,4 @@ color15 = #eceff4
 #border_width = 0.5
 #roundness = 2.0
 
-# vim: ft=dosini cms=#%s
+vim: ft=dosini cms=#%s
