@@ -18,60 +18,6 @@ call plug#end()
 colorscheme gruvbox
 set termguicolors
 
-"""Airline
-let g:airline_theme = 'gruvbox'
-let g:gruvbox_contrast_dark = 'hard'
-
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#coc#enabled = 1
-" Use with urxvt because unicode support is bad.
-" if !exists('g:airline_symbols')
-"     let g:airline_symbols = {}
-" endif
-
-" unicode symbols
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
-" let g:airline_symbols.linenr = '␊'
-" let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.branch = '⎇'
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
-" let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-" let g:airline_symbols.branch = ''
-" let g:airline_symbols.readonly = ''
-" let g:airline_symbols.linenr = ''
-"
-let g:airline#extensions#tabline#enabled = 1
-
-
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-let NERDDefaultAlign="left"
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not
-let g:NERDToggleCheckAllLines = 1
 
 filetype plugin on
 
@@ -137,6 +83,9 @@ map <C-n> :NERDTreeToggle<CR>
 " Fzf toggle
 map <C-f> :Files<CR>
 
+" Tagbar toggle
+nmap <C-t> :TagbarToggle<CR>
+
 " Easy switching between panes
 map <A-h> <C-w>h
 map <A-j> <C-w>j
@@ -159,11 +108,64 @@ nnoremap k gk
 " yank to clipboard
 " set clipboard+=unnamedplus
 
-" Tagbar toggle
-nmap <C-t> :TagbarToggle<CR>
 
 " Split below current window
 set splitbelow splitright
+
+"""Airline
+let g:airline_theme = 'gruvbox'
+let g:gruvbox_contrast_dark = 'hard'
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#coc#enabled = 1
+" Use with urxvt because unicode support is bad.
+" if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+" endif
+
+" unicode symbols
+" let g:airline_left_sep = '»'
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '«'
+" let g:airline_right_sep = '◀'
+" let g:airline_symbols.linenr = '␊'
+" let g:airline_symbols.linenr = '␤'
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''
+"
+let g:airline#extensions#tabline#enabled = 1
+
+" NerdTree stuff
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+let NERDDefaultAlign="left"
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
 
 " Coc example config
 
