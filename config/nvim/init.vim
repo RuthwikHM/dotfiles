@@ -15,9 +15,13 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_italic=1
+" let g:nord_uniform_diff_background = 1
+" let g:nord_italic = 1
+" let g:nord_italic_comments = 1
 colorscheme gruvbox
 set termguicolors
-
 
 filetype plugin on
 
@@ -66,6 +70,8 @@ autocmd BufWritePost init.vim source %
 
 " Fugitive keybindings
 noremap <leader>gs :Git<CR>
+
+" Easy merge conflict resolution
 " remote branch on right
 noremap <leader>gj :diffget RE<CR>
 " local branch on left
@@ -75,16 +81,35 @@ noremap <leader>gf :diffget LO<CR>
 " nnoremap R :%s///g<Left><Left>
 
 " Remap leader to space
-" let mapleader=" "
+let mapleader=" "
 
+" Nerd Commenter remaps for change in leader
+map <leader>ct <plug>NERDCommenterToggle<CR>
+
+" NerdTree stuff
 " NerdTree Toggle
 map <C-n> :NERDTreeToggle<CR>
 
+" Automatically start NERDTree if no file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Fzf toggle
-map <C-f> :Files<CR>
+map <C-p> :Files<CR>
+map <C-b> :Buffers<CR>
 
 " Tagbar toggle
 nmap <C-t> :TagbarToggle<CR>
+
+" Make adjusing split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+
+" Change 2 split windows from vert to horiz or horiz to vert
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
 
 " Easy switching between panes
 map <A-h> <C-w>h
@@ -114,7 +139,6 @@ set splitbelow splitright
 
 """Airline
 let g:airline_theme = 'gruvbox'
-let g:gruvbox_contrast_dark = 'hard'
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#coc#enabled = 1
@@ -148,7 +172,7 @@ let g:airline#extensions#coc#enabled = 1
 "
 let g:airline#extensions#tabline#enabled = 1
 
-" NerdTree stuff
+" Nerd Commenter stuff
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 let NERDDefaultAlign="left"
