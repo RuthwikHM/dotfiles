@@ -15,13 +15,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
+if(has("termguicolors"))
+    set termguicolors
+endif
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_italic=1
 " let g:nord_uniform_diff_background = 1
 " let g:nord_italic = 1
 " let g:nord_italic_comments = 1
-colorscheme gruvbox
-set termguicolors
+colorscheme nord
 
 filetype plugin on
 
@@ -138,7 +140,7 @@ nnoremap k gk
 set splitbelow splitright
 
 """Airline
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'nord'
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#coc#enabled = 1
